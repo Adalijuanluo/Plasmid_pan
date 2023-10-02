@@ -6,7 +6,9 @@ EMBO project 2 team
 ## Input and Output
 ### Input 
 .txt file of a list of plasmid accession numbers for downloading from NCBI 
-**or** 
+
+or 
+
 Path of a directory that includes the .fasta files of plasmid genomes.  
    
 ### Output
