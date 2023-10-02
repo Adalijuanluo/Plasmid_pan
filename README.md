@@ -1,15 +1,13 @@
 # Plasmid_pan
-A pipeline to define the core genome of plasmids 
-
+An **underdevelopment** pipeline to define the core genome of plasmids using prokka and roary. 
+"I suggest using bakta to optimise the annotation, it would be useful for further functional interpretation"
 ## Author
 EMBO project 2 team
 ## Input and Output
 ### Input 
-.txt file of a list of plasmid accession numbers for downloading from NCBI 
+option 1: .txt file of a list of plasmid accession numbers for downloading from NCBI 
 
-or 
-
-Path of a directory that includes the .fasta files of plasmid genomes.  
+option 2: Path of a directory that includes the .fasta files of plasmid genomes.  
    
 ### Output
 1. A directory of plasmid genome annotation .gff files by prokka.
