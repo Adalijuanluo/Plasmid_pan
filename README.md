@@ -7,9 +7,9 @@ An **underdevelopment** pipeline to define the core genome of plasmids using pro
 EMBO project 2 team
 ## Input and Output
 ### Input 
-option 1: .txt file of a list of plasmid accession numbers for downloading from NCBI 
+Option 1: .txt file of a list of plasmid accession numbers for downloading from NCBI.
 
-option 2: Path of a directory that includes the .fasta files of plasmid genomes.  
+Option 2: Path of a directory that includes the .fasta files of plasmid genomes.  
    
 ### Output
 1. A directory of plasmid genome annotation .gff files by prokka.
