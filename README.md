@@ -39,14 +39,16 @@ cd Plasmid_pan
 ## Usage
 * Option 1
 ````
-plasmidpan --help # plasmid -h
+plasmidpan --help
+# plasmidpan -h
 plasmidpan --list path/accession.txt --outpath outpath
 # plasmidpan -l path/accession.txt -o outpath
 
 ````
 * Option 2
 ````
-plasmidpan --help # plasmid -h
+plasmidpan --help
+# plasmidpan -h
 plasmidpan --input path_of_fasta --outpath outpath
 # plasmidpan -i path_of_fasta -o outpath
 ````
