@@ -37,13 +37,17 @@ git clone https://github.com/Adalijuanluo/Plasmid_pan.git
 cd Plasmid_pan
 ````
 ## Usage
-* Output 1
+* Option 1
 ````
-plasmidpan -h
-plasmidpan -l path/accession.txt -o outpath
+plasmidpan --help # plasmid -h
+plasmidpan --list path/accession.txt --outpath outpath
+# plasmidpan -l path/accession.txt -o outpath
+
 ````
-* Output 2
+* Option 2
 ````
-plasmidpan -i path_of_fasta -o outpath
+plasmidpan --help # plasmid -h
+plasmidpan --input path_of_fasta --outpath outpath
+# plasmidpan -i path_of_fasta -o outpath
 ````
 
