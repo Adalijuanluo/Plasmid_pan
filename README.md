@@ -41,8 +41,8 @@ cd Plasmid_pan
 ````
 plasmidpan --help
 # plasmidpan -h
-plasmidpan --list /path/accession.txt --outpath /outpath
-# plasmidpan -l /path/accession.txt -o /outpath
+plasmidpan --acclist /path/accession.txt --outpath /outpath
+# plasmidpan -a /path/accession.txt -o /outpath
 
 ````
 * Option 2
