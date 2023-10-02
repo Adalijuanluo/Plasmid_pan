@@ -1,6 +1,8 @@
 # Plasmid_pan
 An **underdevelopment** pipeline to define the core genome of plasmids using prokka and roary. 
-"I suggest using bakta to optimise the annotation, it would be useful for further functional interpretation"
+
+"We can consider including bakta to optimise the annotation, it would be useful for functional interpretation step"
+
 ## Author
 EMBO project 2 team
 ## Input and Output
