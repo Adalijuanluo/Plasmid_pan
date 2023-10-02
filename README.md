@@ -1,20 +1,15 @@
-# Plasmid_pan
+# Plasmid_pan: rapid & unified definition of plasmids core genome
 An **underdevelopment** pipeline to define the core genome of plasmids using prokka and roary. 
 
 "We can consider including bakta to optimise the annotation, it would be useful for functional interpretation and pinpoint the R-M hotspots."
 
 ## Author
 EMBO project 2 team
-## Input and Output
-### Input 
-Option 1: .txt file of a list of plasmid accession numbers for downloading from NCBI.
+## Contents
 
-Option 2: Path of a directory that includes the .fasta files of plasmid genomes.  
-   
-### Output
-1. A directory of plasmid genome annotation .gff files by prokka.
-2. A directory of pangenome output
-3. Tables and figures that summarise the hard, soft shell/core genes and accessory genes. 
+- [Installation](#installation)
+- [Input & Output](#input-and-output)
+- [Usage](#usage)
 
 ## Installation
 1. Update or Install Miniconda and add the bioconda channel:
@@ -36,6 +31,18 @@ conda install -y -c bioconda roary
 git clone https://github.com/Adalijuanluo/Plasmid_pan.git
 cd Plasmid_pan
 ````
+
+## Input and Output
+### Input 
+Option 1: .txt file of a list of plasmid accession numbers for downloading from NCBI.
+
+Option 2: Path of a directory that includes the .fasta files of plasmid genomes.  
+   
+### Output
+1. A directory of plasmid genome annotation .gff files by prokka.
+2. A directory of pangenome output
+3. Tables and figures that summarise the hard, soft shell/core genes and accessory genes. 
+
 ## Usage
 * Option 1
 ````
