@@ -5,7 +5,9 @@ A pipeline to define the core genome of plasmids
 EMBO project 2 team
 ## Input and Output
 ### Input 
-.txt file of a list of plasmid accession numbers for downloading from NCBI **or** Path of a directory that includes the .fasta files of plasmid genomes.  
+.txt file of a list of plasmid accession numbers for downloading from NCBI 
+**or** 
+Path of a directory that includes the .fasta files of plasmid genomes.  
    
 ### Output
 1. A directory of plasmid genome annotation .gff files by prokka.
