@@ -12,19 +12,21 @@ EMBO project 2 team
 - [Usage](#usage)
 
 ## Installation
-1. Update or Install Miniconda and add the bioconda channel:
-   - conda update -n base -c defaults conda
-   
-     or 
-   
-   - Install miniconda3  -> https://docs.conda.io/en/latest/miniconda.html
-   - Add bioconda -> http://www.ddocent.com//bioconda/
-2. Create miniconda3 environment:
+1. Mamba is recommended to install packages
+2. Install Mamba using miniforge https://github.com/conda-forge/miniforge#mambaforge
+For linux installation:
 ````
-conda create -n plasmid_pan 
-conda activate plasmid_pan
-conda install -y -c conda-forge -c bioconda -c defaults prokka
-conda install -y -c bioconda roary
+wget -O Miniforge3.sh "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
+bash Miniforge3.sh -b -p "${HOME}/conda"
+source "${HOME}/conda/etc/profile.d/conda.sh"
+conda activate
+````
+5. Create a new environment and install packages:
+````
+mamba create -n plamidpan
+mamba activate plasmidpan
+mamba install roary
+mamba install prokka
 ````
 3. Download this repository:
 ````
