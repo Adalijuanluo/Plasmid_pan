@@ -14,18 +14,25 @@ EMBO project 2 team
 ## Installation
 1. Mamba is recommended to install packages
 2. Install Mamba using miniforge https://github.com/conda-forge/miniforge#mambaforge
+   
 For linux installation:
 ````
 wget -O Miniforge3.sh "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
+
 bash Miniforge3.sh -b -p "${HOME}/conda"
+
 source "${HOME}/conda/etc/profile.d/conda.sh"
+
 conda activate
 ````
 5. Create a new environment and install packages:
 ````
-mamba create -n plamidpan
-mamba activate plasmidpan
+mamba create -n plaspan_env
+
+mamba activate plaspan_env
+
 mamba install roary
+
 mamba install prokka
 ````
 3. Download this repository:
