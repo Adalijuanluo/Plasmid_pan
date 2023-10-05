@@ -8,12 +8,7 @@ chmod +x prokka.sh
 nohup ./prokka.sh downloaded.txt
 fi
 
-
-#. /pub59/lijuanl/miniconda3/bin/activate
-#conda activate prokka
-
-#outpath=/pub59/lijuanl/DNA/12_embo_liam/03_prokka
-#inpath=/pub59/lijuanl/DNA/12_embo_liam/01_fasta
+source ~/conda/bin/activate
 mamba activate prokka
 
 outpath=$1
