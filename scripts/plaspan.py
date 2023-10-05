@@ -27,15 +27,43 @@ def main(args):
     run_pangenomepip(args)
 
 
-def download_fa():
-    # to do
-    fastadir = args.outpath + "/fasta"
+def download_sh(acclist, outpath):
+    openfile = open(acclist, "r").read().splitlines()
+    bashfile = outpath + "/download_fasta.sh"
+    outf = open(bashfile, "w")
+    outf.write("#!/bin/bash" + "\n" + "\n" + "\n" + "path=$1"+ "\n" + "mkdir $path" + "\n" + "cd $path"  + "\n" + "\n" )
 
-    return fastadir
+    for line in openfile:
+        a = "wget -O "
+        b = '.fasta "https://www.ncbi.nlm.nih.gov/sviewer/viewer.fcgi?id='
+        c = '&db=nuccore&report=fasta"'
+        if line != "":
+            out = a + line + b + line + c
+            outf.write(out + "\n")
+    outfasta = outpath + "/_fasta"
+    # download_cmd = f"cd {outpath}"
+    # subprocess.Popen(download_cmd, shell=True).wait()
+    download_cmd = f"bash {bashfile}"
+    print(f"bash {bashfile}")
+    # subprocess.Popen(download_cmd, shell=True).wait()
 
+
+    return bashfile, outfasta
+
+def download(bashfile, outfasta):
+    # print(bashfile)
+    try:
+        subprocess.run(["bash", bashfile, outfasta], check=True, shell=False)
+    except subprocess.CalledProcessError as e:
+        print(f"Error: {e}")
+    return
 def run_prokka(input_genomes_dir,output_prokka_dir):
     prokka_cmd = f"bash prokka.sh {output_prokka_dir} {input_genomes_dir}"
     subprocess.Popen(prokka_cmd, shell=True).wait()
+    # try:
+    #     subprocess.run(["bash", "prokka.sh", output_prokka_dir, input_genomes_dir], check=True, shell=False)
+    # except subprocess.CalledProcessError as e:
+    #     print(f"Error: {e}")
 
     return
 
@@ -53,14 +81,19 @@ def run_pangenomepip(args):
     script_path = sys.path[0]
     acclist = args.acclist
     outpath = args.outpath
+    if os.path.exists(outpath):
+        pass
+    else:
+        os.mkdir(outpath)
     output_prokka_dir = outpath + "/" + args.prefix + "_prokka"
     output_roary_dir = outpath + "/" + args.prefix + "_roary"
     os.makedirs(output_prokka_dir, exist_ok=True)
     os.makedirs(output_roary_dir, exist_ok=True)
     if acclist:
-        fastadir = download_fa(acclist)
+        bashfile, fastadir = download_sh(acclist, outpath)
+        download(bashfile, fastadir)
         run_prokka(fastadir,output_prokka_dir)
-        run_roary(output_prokka_dir, output_roary_dir)
+        # run_roary(output_prokka_dir, output_roary_dir)
 
     if args.input:
         fastadir = args.input
