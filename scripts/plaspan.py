@@ -58,7 +58,7 @@ def download(bashfile, outfasta):
         print(f"Error: {e}")
     return
 def run_prokka(input_genomes_dir,output_prokka_dir):
-    prokka_cmd = f"bash prokka.sh {output_prokka_dir} {input_genomes_dir}"
+    prokka_cmd = f"bash scripts/prokka.sh {output_prokka_dir} {input_genomes_dir}"
     subprocess.Popen(prokka_cmd, shell=True).wait()
     # try:
     #     subprocess.run(["bash", "prokka.sh", output_prokka_dir, input_genomes_dir], check=True, shell=False)
@@ -70,7 +70,7 @@ def run_prokka(input_genomes_dir,output_prokka_dir):
 def run_roary(output_prokka_dir, output_roary_dir):
     print(output_prokka_dir)
     print(output_roary_dir)
-    roary_cmd=f"bash roary.sh {output_prokka_dir} {output_roary_dir}"
+    roary_cmd=f"bash scripts/roary.sh {output_prokka_dir} {output_roary_dir}"
     subprocess.Popen(roary_cmd, shell=True).wait()
 
     return
@@ -107,8 +107,8 @@ if __name__ == "__main__":
     parser.add_argument("-a", "--acclist",
                         help=".txt file of a list of plasmid accession numbers for downloading from NCBI, e.g., "
                              "acclist.txt")
-    parser.add_argument("-i", "--input",help="Path of a directory that includes the .fasta files of plasmid genomes, e.g., /home/fasta")
-    parser.add_argument("-o", "--outpath",help="Output directory, e.g., /home/output")
+    parser.add_argument("-i", "--input",help="Path of a directory that includes the .fasta files of plasmid genomes, e.g., /home/fasta", default="./")
+    parser.add_argument("-o", "--outpath",help="Output directory, e.g., /home/output", default="./output")
     parser.add_argument("-p", "--prefix", help="prefix of outdir, e.g., PTU0", default="")
     if len(sys.argv) < 2:
         parser.print_help(sys.stderr)

@@ -1,7 +1,11 @@
 #!/bin/bash
 
-source ~/conda/bin/activate
-conda activate roary
+# Ada cluster
+#source ~/conda/bin/activate
+#conda activate roary
+# Liam laptop
+source /Users/Liam/opt/miniconda3/bin/activate
+conda activate plaspan_env
 
 input=$1
 outpath=$2
