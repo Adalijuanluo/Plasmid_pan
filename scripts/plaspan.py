@@ -58,7 +58,7 @@ def download(bashfile, outfasta):
         print(f"Error: {e}")
     return
 def run_prokka(input_genomes_dir,output_prokka_dir):
-    prokka_cmd = f"bash prokka.sh {output_prokka_dir} {input_genomes_dir}"
+    prokka_cmd = f"bash ../prokka.sh {output_prokka_dir} {input_genomes_dir}"
     subprocess.Popen(prokka_cmd, shell=True).wait()
     # try:
     #     subprocess.run(["bash", "prokka.sh", output_prokka_dir, input_genomes_dir], check=True, shell=False)
@@ -70,7 +70,7 @@ def run_prokka(input_genomes_dir,output_prokka_dir):
 def run_roary(output_prokka_dir, output_roary_dir):
     print(output_prokka_dir)
     print(output_roary_dir)
-    roary_cmd=f"bash roary.sh {output_prokka_dir} {output_roary_dir}"
+    roary_cmd=f"bash ../roary.sh {output_prokka_dir} {output_roary_dir}"
     subprocess.Popen(roary_cmd, shell=True).wait()
 
     return
@@ -81,19 +81,19 @@ def run_pangenomepip(args):
     script_path = sys.path[0]
     acclist = args.acclist
     outpath = args.outpath
-    if os.path.exists(outpath):
-        pass
-    else:
-        os.mkdir(outpath)
+    # if os.path.exists(outpath):
+    #     pass
+    # else:
+    #     os.mkdir(outpath)
     output_prokka_dir = outpath + "/" + args.prefix + "_prokka"
     output_roary_dir = outpath + "/" + args.prefix + "_roary"
     os.makedirs(output_prokka_dir, exist_ok=True)
-    os.makedirs(output_roary_dir, exist_ok=True)
+    # os.makedirs(output_roary_dir, exist_ok=True)
     if acclist:
         bashfile, fastadir = download_sh(acclist, outpath)
         download(bashfile, fastadir)
         run_prokka(fastadir,output_prokka_dir)
-        # run_roary(output_prokka_dir, output_roary_dir)
+        run_roary(output_prokka_dir, output_roary_dir)
 
     if args.input:
         fastadir = args.input
